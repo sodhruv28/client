@@ -1,17 +1,26 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
   return (
     <footer id="footer" className="bg-sb-text text-cream-dark">
       {/* Top accent line */}
-      <div className="h-1 bg-gradient-to-r from-accent via-primary to-accent" />
+      <div className="h-1 bg-primary" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-2xl">🍪</span>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="relative w-12 h-12 flex-shrink-0">
+                <Image
+                  src="/logo.png"
+                  alt="sweet.bonanza logo"
+                  fill
+                  sizes="48px"
+                  className="object-contain drop-shadow-md"
+                />
+              </div>
               <span className="font-heading text-2xl font-bold text-white">
                 sweet.bonanza
               </span>
@@ -26,7 +35,7 @@ export function Footer() {
                 href="https://instagram.com/sweet.bonanza"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-accent hover:text-sb-text text-white transition-all"
+                className="w-10 h-10 flex items-center justify-center rounded-md bg-white/10 hover:bg-accent hover:text-sb-text text-white transition-colors"
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -37,7 +46,7 @@ export function Footer() {
                 href="https://wa.me/919999999999"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#25D366] text-white transition-all"
+                className="w-10 h-10 flex items-center justify-center rounded-md bg-white/10 hover:bg-[#25D366] text-white transition-colors"
                 aria-label="WhatsApp"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -78,22 +87,10 @@ export function Footer() {
               Delivery
             </h3>
             <ul className="space-y-3 text-sm text-cream-dark/60">
-              <li className="flex items-start gap-2">
-                <span className="mt-0.5">📍</span>
-                <span>Delivering across Surat</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="mt-0.5">🕐</span>
-                <span>Order before 6 PM for next-day delivery</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="mt-0.5">🎁</span>
-                <span>Custom hampers available on request</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="mt-0.5">📦</span>
-                <span>Bulk / corporate orders welcome</span>
-              </li>
+              <li>Delivering across Surat</li>
+              <li>Order before 6 PM for next-day delivery</li>
+              <li>Custom hampers available on request</li>
+              <li>Bulk and corporate orders welcome</li>
             </ul>
           </div>
 
@@ -110,7 +107,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-accent transition-colors"
                 >
-                  💬 WhatsApp: +91 99999 99999
+                  WhatsApp: +91 99999 99999
                 </a>
               </li>
               <li>
@@ -120,7 +117,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-accent transition-colors"
                 >
-                  📸 @sweet.bonanza
+                  Instagram: @sweet.bonanza
                 </a>
               </li>
               <li>
@@ -128,7 +125,7 @@ export function Footer() {
                   href="mailto:hello@sweetbonanza.in"
                   className="hover:text-accent transition-colors"
                 >
-                  ✉️ hello@sweetbonanza.in
+                  Email: hello@sweetbonanza.in
                 </a>
               </li>
             </ul>
@@ -136,14 +133,18 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-cream-dark/40">
-            © {new Date().getFullYear()} sweet.bonanza. All rights reserved. Made
-            with 🤎 in Surat.
+            © {new Date().getFullYear()} sweet.bonanza. All rights reserved.
           </p>
-          <p className="text-xs text-cream-dark/40">
-            Fresh. Handmade. Always.
-          </p>
+          <div className="flex gap-6 text-xs text-cream-dark/40">
+            <Link href="/privacy" className="hover:text-accent transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="hover:text-accent transition-colors">
+              Terms & Conditions
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

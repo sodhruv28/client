@@ -28,7 +28,7 @@ export function CartDrawer() {
               Your Cart
             </h2>
             {totalItems > 0 && (
-              <span className="bg-accent text-sb-text text-xs font-bold px-2.5 py-0.5 rounded-full">
+              <span className="bg-accent text-sb-text text-xs font-bold px-2.5 py-0.5 rounded-sm">
                 {totalItems} {totalItems === 1 ? "item" : "items"}
               </span>
             )}
@@ -36,7 +36,7 @@ export function CartDrawer() {
           <button
             id="cart-close-btn"
             onClick={closeCart}
-            className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-cream transition-colors text-text-muted hover:text-sb-text"
+            className="w-8 h-8 flex items-center justify-center rounded-md hover:bg-cream transition-colors text-text-muted hover:text-sb-text"
             aria-label="Close cart"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -49,7 +49,6 @@ export function CartDrawer() {
         <div className="flex-1 overflow-y-auto px-6 py-4">
           {state.items.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-full text-center py-16">
-              <span className="text-5xl mb-4">🛒</span>
               <h3 className="font-heading text-lg font-semibold text-sb-text mb-2">
                 Your cart is empty
               </h3>
@@ -115,7 +114,7 @@ export function CartDrawer() {
                               item.customizations
                             )
                           }
-                          className="w-7 h-7 flex items-center justify-center rounded-full bg-white border border-border text-sm font-bold text-text-muted hover:border-primary hover:text-primary transition-colors"
+                          className="w-7 h-7 flex items-center justify-center rounded-md bg-white border border-border text-sm font-bold text-text-muted hover:border-primary hover:text-primary transition-colors"
                           aria-label="Decrease quantity"
                         >
                           −
@@ -131,7 +130,7 @@ export function CartDrawer() {
                               item.customizations
                             )
                           }
-                          className="w-7 h-7 flex items-center justify-center rounded-full bg-white border border-border text-sm font-bold text-text-muted hover:border-primary hover:text-primary transition-colors"
+                          className="w-7 h-7 flex items-center justify-center rounded-md bg-white border border-border text-sm font-bold text-text-muted hover:border-primary hover:text-primary transition-colors"
                           aria-label="Increase quantity"
                         >
                           +

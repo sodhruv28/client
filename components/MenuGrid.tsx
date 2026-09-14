@@ -32,7 +32,7 @@ export function MenuGrid({
       <div className="flex flex-wrap gap-2 sm:gap-3 mb-10">
         <button
           onClick={() => setActiveCategory("all")}
-          className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${
+          className={`px-5 py-2.5 rounded-md text-sm font-semibold transition-all ${
             activeCategory === "all"
               ? "bg-primary text-white shadow-md"
               : "bg-white text-text-muted border border-border hover:border-primary hover:text-primary"
@@ -46,7 +46,7 @@ export function MenuGrid({
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${
+              className={`px-5 py-2.5 rounded-md text-sm font-semibold transition-all ${
                 activeCategory === cat.id
                   ? "bg-primary text-white shadow-md"
                   : "bg-white text-text-muted border border-border hover:border-primary hover:text-primary"
@@ -68,7 +68,6 @@ export function MenuGrid({
       {/* Empty state */}
       {filtered.length === 0 && (
         <div className="text-center py-20">
-          <span className="text-5xl mb-4 block">🍰</span>
           <h3 className="font-heading text-xl font-semibold text-sb-text mb-2">
             No products found
           </h3>

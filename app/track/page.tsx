@@ -83,8 +83,7 @@ function TrackContent() {
 
         {/* Results */}
         {searched && !order && (
-          <div className="bg-white rounded-2xl p-8 shadow-sm border border-border/50 text-center">
-            <span className="text-5xl block mb-4">🔍</span>
+          <div className="bg-white rounded-md p-8 shadow-sm border border-border/50 text-center">
             <h3 className="font-heading text-xl font-semibold text-sb-text mb-2">
               Order Not Found
             </h3>
@@ -154,13 +153,7 @@ function TrackContent() {
                             />
                           </svg>
                         ) : (
-                          <span
-                            className={
-                              isActive ? "text-white" : "text-text-light"
-                            }
-                          >
-                            {status.icon}
-                          </span>
+                          isActive && <span className="w-2.5 h-2.5 rounded bg-white" />
                         )}
                       </div>
                       <div className="flex-1">

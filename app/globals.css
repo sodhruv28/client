@@ -156,9 +156,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .animate-shimmer {
-  background: linear-gradient(90deg, transparent 30%, rgba(212, 165, 116, 0.15) 50%, transparent 70%);
-  background-size: 200% 100%;
-  animation: shimmer 2s infinite;
+  background: var(--color-cream-dark);
+  animation: pulse-soft 2s infinite;
 }
 
 /* ─── Stagger delays for children animations ────────────────────────────────── */
@@ -205,7 +204,7 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--color-primary);
   color: white;
   padding: 12px 28px;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-md);
   font-weight: 600;
   font-size: 0.938rem;
   letter-spacing: 0.01em;
@@ -233,7 +232,7 @@ h1, h2, h3, h4, h5, h6 {
   background: transparent;
   color: var(--color-primary);
   padding: 12px 28px;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-md);
   font-weight: 600;
   font-size: 0.938rem;
   letter-spacing: 0.01em;
@@ -281,7 +280,7 @@ h1, h2, h3, h4, h5, h6 {
 .section-divider {
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+  background: var(--color-primary);
   border-radius: var(--radius-full);
   margin: 0 auto;
 }
@@ -294,7 +293,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 4px 10px;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-sm);
 }
 
 .badge-bestseller {

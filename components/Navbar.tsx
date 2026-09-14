@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useCart } from "@/components/CartProvider";
 
@@ -36,10 +37,19 @@ export function Navbar() {
           <Link
             href="/"
             id="nav-logo"
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-3 group"
             onClick={() => setMobileOpen(false)}
           >
-            <span className="text-2xl">🍪</span>
+            <div className="relative w-11 h-11 sm:w-12 sm:h-12 flex-shrink-0 group-hover:scale-105 transition-transform duration-200">
+              <Image
+                src="/logo.png"
+                alt="sweet.bonanza logo"
+                fill
+                sizes="(max-width: 640px) 44px, 48px"
+                className="object-contain drop-shadow-sm"
+                priority
+              />
+            </div>
             <span
               className={`font-heading text-xl sm:text-2xl font-bold tracking-tight transition-colors ${
                 scrolled ? "text-primary" : "text-white"
@@ -71,7 +81,7 @@ export function Navbar() {
             <button
               id="nav-cart-btn"
               onClick={toggleCart}
-              className={`relative flex items-center gap-2 px-4 py-2 rounded-full font-semibold text-sm transition-all ${
+              className={`relative flex items-center gap-2 px-4 py-2 rounded-md font-semibold text-sm transition-all ${
                 scrolled
                   ? "bg-primary text-white hover:bg-primary-hover"
                   : "bg-white/20 backdrop-blur-sm text-white hover:bg-white/30"
@@ -92,7 +102,7 @@ export function Navbar() {
               </svg>
               Cart
               {totalItems > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 w-5 h-5 flex items-center justify-center bg-accent text-sb-text text-xs font-bold rounded-full animate-bounce-in">
+                <span className="absolute -top-1.5 -right-1.5 w-5 h-5 flex items-center justify-center bg-accent text-sb-text text-xs font-bold rounded-sm">
                   {totalItems}
                 </span>
               )}
@@ -104,7 +114,7 @@ export function Navbar() {
             <button
               id="mobile-cart-btn"
               onClick={toggleCart}
-              className={`relative p-2 rounded-full transition-colors ${
+              className={`relative p-2 rounded-md transition-colors ${
                 scrolled ? "text-primary" : "text-white"
               }`}
             >
@@ -122,7 +132,7 @@ export function Navbar() {
                 />
               </svg>
               {totalItems > 0 && (
-                <span className="absolute -top-0.5 -right-0.5 w-4 h-4 flex items-center justify-center bg-accent text-sb-text text-[10px] font-bold rounded-full">
+                <span className="absolute -top-0.5 -right-0.5 w-4 h-4 flex items-center justify-center bg-accent text-sb-text text-[10px] font-bold rounded-sm">
                   {totalItems}
                 </span>
               )}
@@ -176,18 +186,16 @@ export function Navbar() {
                   href="https://instagram.com/sweet.bonanza"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 py-3 px-4 text-sm text-text-muted hover:text-primary transition-colors"
+                  className="block py-3 px-4 text-sm font-medium text-text-muted hover:text-primary transition-colors"
                 >
-                  <span className="text-lg">📸</span>
                   Follow on Instagram
                 </a>
                 <a
                   href="https://wa.me/919999999999"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 py-3 px-4 text-sm text-text-muted hover:text-primary transition-colors"
+                  className="block py-3 px-4 text-sm font-medium text-text-muted hover:text-primary transition-colors"
                 >
-                  <span className="text-lg">💬</span>
                   WhatsApp us
                 </a>
               </div>

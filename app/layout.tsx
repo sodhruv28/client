@@ -19,9 +19,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "sweet.bonanza — Handcrafted Desserts, Made with Love",
+  title: "sweet.bonanza | Surat's Premium Bakery",
   description:
     "Surat's favourite home-baked desserts. Cookie tins, brownie tubs, kunafa cookies, cakes, and festive hampers. Order online for delivery across Surat.",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   keywords: [
     "sweet bonanza",
     "surat desserts",
@@ -34,7 +39,7 @@ export const metadata: Metadata = {
     "Rakhi gifts Surat",
   ],
   openGraph: {
-    title: "sweet.bonanza — Handcrafted Desserts, Made with Love",
+    title: "sweet.bonanza | Surat's Premium Bakery",
     description:
       "Surat's favourite home-baked desserts. Cookie tins, brownie tubs, kunafa, cakes & festive hampers.",
     type: "website",

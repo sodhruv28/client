@@ -54,7 +54,7 @@ export function ProductCard({ product }: { product: Product }) {
         {/* Out of stock overlay */}
         {!product.inStock && (
           <div className="absolute inset-0 bg-black/40 flex items-center justify-center z-10">
-            <span className="bg-white/90 text-sb-text font-bold text-sm px-4 py-2 rounded-full">
+            <span className="bg-white/90 text-sb-text font-bold text-sm px-4 py-2 rounded-md">
               Sold Out
             </span>
           </div>
@@ -64,7 +64,7 @@ export function ProductCard({ product }: { product: Product }) {
         {product.inStock && (
           <button
             onClick={handleAddToCart}
-            className={`absolute bottom-3 right-3 z-10 w-10 h-10 flex items-center justify-center rounded-full shadow-lg transition-all ${
+            className={`absolute bottom-3 right-3 z-10 w-10 h-10 flex items-center justify-center rounded-md shadow-lg transition-all ${
               added
                 ? "bg-success text-white scale-110"
                 : "bg-white text-primary hover:bg-primary hover:text-white hover:scale-110"

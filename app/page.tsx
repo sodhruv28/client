@@ -3,16 +3,13 @@ import Link from "next/link";
 import {
   getBestsellers,
   getCategories,
-  getTestimonials,
   formatPrice,
 } from "@/lib/data";
 import { HeroSection } from "@/components/HeroSection";
-import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 
 export default function Home() {
   const bestsellers = getBestsellers();
   const categories = getCategories();
-  const testimonials = getTestimonials();
 
   return (
     <>
@@ -41,7 +38,7 @@ export default function Home() {
               <Link
                 key={product.id}
                 href={`/menu/${product.id}`}
-                className={`product-card group block bg-white rounded-2xl overflow-hidden shadow-sm border border-border/50 opacity-0 animate-fade-in-up stagger-${i + 1}`}
+                className="product-card group block bg-white rounded-md overflow-hidden shadow-sm border border-border/50"
               >
                 <div className="relative aspect-square overflow-hidden bg-cream-dark">
                   <Image
@@ -104,7 +101,7 @@ export default function Home() {
                 key={cat.id}
                 href={`/menu?category=${cat.id}`}
                 id={`cat-${cat.id}`}
-                className="group relative aspect-[3/4] rounded-2xl overflow-hidden"
+                className="group relative aspect-[3/4] rounded-md overflow-hidden"
               >
                 <Image
                   src={cat.image}
@@ -113,7 +110,7 @@ export default function Home() {
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                   sizes="(max-width: 640px) 50vw, 20vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-black/40" />
                 <div className="absolute inset-x-0 bottom-0 p-4">
                   <h3 className="font-heading text-lg font-bold text-white">
                     {cat.name}
@@ -134,7 +131,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Image */}
             <div className="relative">
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+              <div className="aspect-[4/5] rounded-md overflow-hidden shadow-xl">
                 <Image
                   src="/hero-bg.jpg"
                   alt="sweet.bonanza desserts"
@@ -164,12 +161,12 @@ export default function Home() {
                   What started as a passion for baking in a Surat home kitchen has
                   grown into something truly special. At sweet.bonanza, every
                   cookie, brownie, and cake is handcrafted in small batches using
-                  only premium ingredients — real Belgian chocolate, farm-fresh
+                  only premium ingredients: real Belgian chocolate, farm-fresh
                   butter, and the finest nuts and spices.
                 </p>
                 <p>
                   We believe desserts should be an experience, not just food.
-                  That&apos;s why we obsess over every detail — from the first
+                  That&apos;s why we obsess over every detail, from the first
                   bite to the unboxing moment. Whether it&apos;s a midnight craving,
                   a festival celebration, or a gift for someone special, we make
                   sure it&apos;s unforgettable.
@@ -198,27 +195,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── Testimonials ──────────────────────────────────────────────── */}
-      <section id="testimonials" className="py-20 sm:py-28 bg-white px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <span className="text-accent font-semibold text-sm tracking-widest uppercase">
-              Client Love
-            </span>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-sb-text mt-3 mb-4">
-              What Our Customers Say
-            </h2>
-            <div className="section-divider" />
-          </div>
-
-          <TestimonialCarousel testimonials={testimonials} />
-        </div>
-      </section>
 
       {/* ─── Festival Banner ───────────────────────────────────────────── */}
       <section id="festival-banner" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
-          <div className="relative rounded-3xl overflow-hidden">
+          <div className="relative rounded-md overflow-hidden">
             <Image
               src="/products/rakhi-hamper.jpg"
               alt="Festival hampers"
@@ -226,7 +207,7 @@ export default function Home() {
               className="object-cover"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+            <div className="absolute inset-0 bg-black/50" />
 
             <div className="relative z-10 px-8 sm:px-14 py-16 sm:py-20">
               <span className="badge badge-seasonal mb-4 inline-block">
@@ -256,7 +237,7 @@ export default function Home() {
           </h2>
           <p className="text-text-muted max-w-xl mx-auto mb-8 leading-relaxed">
             Custom cakes, corporate gifting, bulk orders, or something totally
-            unique — we love a creative challenge. Drop us a message and
+            unique. We love a creative challenge. Drop us a message and
             let&apos;s create something special together.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -266,7 +247,6 @@ export default function Home() {
               rel="noopener noreferrer"
               className="btn-primary w-full sm:w-auto"
             >
-              <span>💬</span>
               WhatsApp Us
             </a>
             <a
@@ -275,7 +255,6 @@ export default function Home() {
               rel="noopener noreferrer"
               className="btn-secondary w-full sm:w-auto"
             >
-              <span>📸</span>
               Follow on Instagram
             </a>
           </div>
